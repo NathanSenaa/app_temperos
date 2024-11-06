@@ -5,15 +5,13 @@ bool verificarDisponibilidade(String tempero) {
 }
 
 void main() {
-  group('Testes Unitários - Casos de Uso', () {
-    test('Deve retornar verdadeiro quando o tempero está disponível', () {
-      bool resultado = verificarDisponibilidade('Pimenta');
-      expect(resultado, isTrue);
+  group('Testes Unitários', () {
+    test('Retorna verdadeiro quando o tempero está disponível', () {
+      expect(verificarDisponibilidade('Pimenta'), isTrue);
     });
 
-    test('Deve retornar falso quando o tempero não está disponível', () {
-      bool resultado = verificarDisponibilidade('');
-      expect(resultado, isFalse);
+    test('Retorna falso quando o tempero não está disponível', () {
+      expect(verificarDisponibilidade(''), isFalse);
     });
   });
 }
