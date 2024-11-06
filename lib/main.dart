@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
-import 'catalogo_screen.dart';
+import 'package:app_temperos/welcome_screen.dart'; // Ajuste o caminho conforme necessário
 
 void main() {
-  runApp(SenaCondimentosApp());
-}
-
-class SenaCondimentosApp extends StatelessWidget {
-  const SenaCondimentosApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Sena Condimentos',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: CatalogoScreen(),
-    );
-  }
+  runApp(MaterialApp(
+    home: WelcomeScreen(),
+    theme: ThemeData(
+      primarySwatch: Colors.brown,
+    ),
+  ));
 }
