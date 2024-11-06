@@ -1,27 +1,63 @@
 import 'package:flutter/material.dart';
-import 'cadastro_screen.dart';
 
 class CatalogoScreen extends StatelessWidget {
-  const CatalogoScreen({super.key});
+  final List<Map<String, dynamic>> temperos = [
+    {
+      'nome': 'Colorau',
+      'preco': 4.0,
+      'imagem': 'assets/colorau.jpg'
+    },
+    {
+      'nome': 'Açafrão',
+      'preco': 15.0,
+      'imagem': 'assets/acafrao.jpg'
+    },
+    {
+      'nome': 'Chimichurri',
+      'preco': 12.0,
+      'imagem': 'assets/chimichurri.jpg'
+    },
+    {
+      'nome': 'Lemon Pepper',
+      'preco': 10.0,
+      'imagem': 'assets/lemon_pepper.jpg'
+    },
+    {
+      'nome': 'Orégano',
+      'preco': 3.5,
+      'imagem': 'assets/oregano.jpg'
+    },
+    {
+      'nome': 'Pimenta do Reino',
+      'preco': 8.0,
+      'imagem': 'assets/pimenta_reino.jpg'
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Catálogo de Condimentos'),
+        title: Text('Catálogo de Temperos'),
       ),
-      body: const Center(
-        child: Text('Lista de Condimentos Cadastrados Aparecerá Aqui'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => CadastroScreen()),
+      body: ListView.builder(
+        itemCount: temperos.length,
+        itemBuilder: (context, index) {
+          final tempero = temperos[index];
+          return Card(
+            margin: EdgeInsets.all(8.0),
+            child: ListTile(
+              leading: Image.asset(
+                tempero['imagem'],
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
+              ),
+              title: Text(tempero['nome']),
+              subtitle: Text('R\$ ${tempero['preco'].toStringAsFixed(2)}'),
+            ),
           );
         },
-        tooltip: 'Adicionar Condimento',
-        child: Icon(Icons.add),
       ),
     );
   }
