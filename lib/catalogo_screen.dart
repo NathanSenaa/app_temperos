@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'cadastro_screen.dart';
 
 class CatalogoScreen extends StatelessWidget {
+  const CatalogoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Catálogo de Condimentos'),
+        title: const Text('Catálogo de Condimentos'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Lista de Condimentos Cadastrados Aparecerá Aqui'),
       ),
       floatingActionButton: FloatingActionButton(
@@ -18,8 +20,8 @@ class CatalogoScreen extends StatelessWidget {
             MaterialPageRoute(builder: (context) => CadastroScreen()),
           );
         },
-        child: Icon(Icons.add),
         tooltip: 'Adicionar Condimento',
+        child: Icon(Icons.add),
       ),
     );
   }

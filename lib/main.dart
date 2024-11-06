@@ -6,6 +6,8 @@ void main() {
 }
 
 class SenaCondimentosApp extends StatelessWidget {
+  const SenaCondimentosApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
